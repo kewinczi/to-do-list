@@ -1,0 +1,56 @@
+.dot {
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.dot:hover {
+    height: 17px;
+    width: 17px;
+}
+
+ul {
+    list-style-type: none
+}
+
+.settings-item:hover {
+    transform: translate(-1px,-1px);
+    color: gray;
+}
+
+#settings-icon {
+    height: 40px;
+    transition: transform 0.3s;
+}
+
+#settings-icon:hover {
+    transform: translate(-3px,-3px);
+}
+
+.letter {
+    display: inline-block;
+    transition: transform 1s;
+}
+.letter:hover {
+    transform: rotate(10deg) translateY(-20px);
+    color: rgb(48, 44, 44);   
+}
+
+header {
+    background: wheat;
+}
+
+.header-img {
+    transition: transform 0.5s;
+    height: 250px;
+    padding-bottom: 15px;
+}
+
+.header-img:hover {
+    transform: rotate(10deg)
+}
+
+header::before {
+    padding: 100px;
+}
