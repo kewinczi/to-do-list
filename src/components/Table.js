@@ -104,7 +104,7 @@ class Table extends React.Component {
         return (
             <div>
                 <div>
-                <table class="table table-borderless">
+                <table className="table table-borderless">
                     {tableData}
                 </table>      
                 </div>

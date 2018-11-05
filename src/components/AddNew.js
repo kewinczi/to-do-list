@@ -13,14 +13,21 @@ class AddNew extends React.Component {
         this.setState({ listItem });
     }
 
-    handleClick = () => {
-        this.props.addItem(this.state.listItem)
-        this.setState({listItem: ""})
+    handleSubmit = (e) => {
+        e.preventDefault();
+        if (this.isValid()) {
+            this.props.addItem(this.state.listItem)
+            this.setState({listItem: ""})
+        }
+    }
+
+    isValid = () => {
+       return this.state.listItem !== ''
     }
 
     render() {
         return (
-            <form>
+            <form onSubmit={this.handleSubmit}>
                 <div className="form-group">
                     <label>Thing to do:</label>
                     <input 
@@ -30,13 +37,14 @@ class AddNew extends React.Component {
                         value={this.state.listItem}
                         placeholder="e.g. Do laundry"
                         onChange={this.handleChange}
+                        autoFocus
                     />
                     <button
+                        disabled={!this.isValid()}
                         className="btn btn-primary mt-2"
-                        type="button"
-                        onClick={this.handleClick}
-                        >
-                        Add
+                        type="submit"
+                        onClick={this.handleSubmit}
+                    >Add
                     </button>
                 </div>
             </form>

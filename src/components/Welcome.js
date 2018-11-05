@@ -12,7 +12,8 @@ class Welcome extends React.Component {
         this.setState({ name })
     }
 
-    handleSubmit = () => {
+    handleSubmit = (e) => {
+        e.preventDefault();
         this.props.saveName(this.state.name);
         this.setState(this.initialState)
     }
@@ -22,7 +23,7 @@ class Welcome extends React.Component {
             <div className="text-center">
                 <h1 className="text- display-2">Hey there!</h1>
                 <h2 className="text-center display-3">What's your name?</h2>
-                <form>
+                <form onSubmit={this.handleSubmit}>
                     <div className="form-group">
                         <input
                             className="form-control mt-5"
@@ -37,7 +38,7 @@ class Welcome extends React.Component {
                             className="btn btn-primary mt-3"
                             data-toggle="modal" 
                             data-target="#myModal"
-                            type="button"
+                            type="submit"
                             value="Submit"
                             onClick={this.handleSubmit}
                         />
